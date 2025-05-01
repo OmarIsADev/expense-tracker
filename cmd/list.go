@@ -7,7 +7,9 @@ import (
 
 func NewListCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "list",
+		Use:   "list",
+		Short: "List expenses",
+		Long:  `list`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return listCmd()
 		},

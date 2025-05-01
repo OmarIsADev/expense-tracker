@@ -9,7 +9,11 @@ var id *int
 
 func NewDeleteCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "delete",
+		Use:   "delete --id [id]",
+		Short: "Delete an expense",
+		Long: `delete --id [id]
+		
+id: expense ID`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return deleteCmd()
 		},

@@ -13,7 +13,12 @@ var amount *float64
 
 func NewAddCmd() *cobra.Command {
 	cmd := &cobra.Command{
-		Use: "add",
+		Use:   "add",
+		Short: "Add an expense",
+		Long: `add -d [description] -a [amount]
+		
+description: expense description
+amount: expense amount`,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return addCmd()
 		},
